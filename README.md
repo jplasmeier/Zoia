@@ -58,7 +58,7 @@ The API should respond to requests for cached resources immediately with a hit o
 
 ## Implementation
 
-Zoia is planned to be mostly written in Java with some Clojure and/or Perl if need be. 
+Zoia is planned to be mostly written in Clojure with other languages if need be. The web parts are handled by `ring` and `liberator`. 
 
 ## Testing and Evaluation
 

@@ -1,7 +1,8 @@
 (ns zoia.core
   (:require [liberator.core :refer [resource defresource]]
             [ring.middleware.params :refer [wrap-params]]
-            [compojure.core :refer [defroutes ANY]]
+            [ring.middleware.file :refer [wrap-file]]
+            [compojure.core :refer [defroutes ANY routes]]
             [clojure.java.io :refer [file]])
   (:gen-class))
 
@@ -14,19 +15,27 @@
   (let [file_path "resources/test.mp3"]
     (file file_path)))
 
+(defresource index
+  :available-media-types ["text/html"]
+  :handle-ok (file "resources/static/index.html"))
 
-(defroutes app
-  (ANY "/foo" [] (resource :available-media-types ["text/html"]
-                           :handle-ok "<html>Hello, Internet.</html>")))
+(defresource static [filename]
+  :available-media-types ["text/css" "text/javascript"]
+  :handle-ok (file (str "resources/static/" filename)))
 
 (defresource parameter [id]
   :available-media-types ["audio/mpeg"]
   :handle-ok (get-file "hardcodedpath")) 
 
-(defroutes app
-  (ANY "/file/:id" [id] (parameter id)))
+(defn assemble-routes []
+  (->
+   (routes
+    (ANY "/" [] index)
+    (ANY "/file/:id" [id] (parameter id))
+    (ANY "/:filename" [filename] (static filename)))))
 
 (def handler 
-  (-> app 
+  (-> (assemble-routes)
+      (wrap-file "resources")
       wrap-params))
 
