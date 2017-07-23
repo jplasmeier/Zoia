@@ -8,7 +8,9 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [liberator "0.14.1"]
                  [compojure "1.3.4"]
-                 [ring/ring-core "1.2.1"]]
+                 [ring/ring-core "1.2.1"]
+                 [google-apps-clj "0.6.1"]]
+  
   :main ^:skip-aot zoia.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

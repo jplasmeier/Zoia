@@ -40,7 +40,7 @@ Music files are cached in an LRU cache (though this is subject to change).
 
 #### Modes
 
-* `artist` mode - cache all albums by that artist. Includes `album` mode by default. Prolific artists may exceed memory limits. 
+* `artist` mode - cache all albums by that artist. Includes `album` mode by default. Prolific artists may exceed cache space limits. 
 * `album` mode - cache all of the songs in an album. Enabled by default.
 * `playlist` mode - cache all of the songs in a playlist. Enabled by default.
 
@@ -50,7 +50,7 @@ Music files are cached in an LRU cache (though this is subject to change).
 
 #### API
 
-An API will support retrieval and transfer of metadata and other resources, namely music files. The API will leverage WebSockets to allow for seamless client/server communication and streaming. 
+An API will support retrieval and transfer of metadata and other resources, namely music files. The API may implement streaming if performance dictates doing so. 
 
 Zoia uses SQLite3 to load metadata from the filesystem into an in-memory database. This allows quick retrieval by the API. 
 

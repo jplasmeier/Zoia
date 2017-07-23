@@ -20,3 +20,18 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+/target
+/classes
+/checkouts
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/.lein-*
+/.nrepl-port
+.hgignore
+.hg/
+/resources/static/*
+*.swp
+*.swo
