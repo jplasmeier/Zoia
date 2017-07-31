@@ -15,9 +15,17 @@
   (let [file_path "resources/test.mp3"]
     (file file_path)))
 
+; TODO: Implement this 
+(defn retrieve-all-json []
+  ())
+
 (defresource index
   :available-media-types ["text/html"]
   :handle-ok (file "resources/static/index.html"))
+
+(defresource all
+  :available-media-types ["application/json"]
+  :handle-ok (retrieve-all-json))
 
 (defresource static [filename]
   :available-media-types ["text/css" "text/javascript"]
@@ -31,6 +39,7 @@
   (->
    (routes
     (ANY "/" [] index)
+    (ANY "/all" [] all)
     (ANY "/file/:id" [id] (parameter id))
     (ANY "/:filename" [filename] (static filename)))))
 
