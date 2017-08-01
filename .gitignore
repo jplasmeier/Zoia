@@ -33,5 +33,6 @@ pom.xml.asc
 .hgignore
 .hg/
 /resources/static/*
+/resources/secrets/
 *.swp
 *.swo

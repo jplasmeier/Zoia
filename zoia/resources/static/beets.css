@@ -30,6 +30,13 @@ body {
     margin: 0.35em;
     float: left;
 }
+#playlists {
+    position: fixed;
+    top: 36px;
+    height: 44px;
+    left: 17em;
+    width: 100%;
+}
 
 #entities {
     width: 17em;
@@ -87,24 +94,48 @@ body {
     font-size: 0.9em;
 }
 
+#playlists ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
 
-#main-detail, #extra-detail {
+#playlists li {
+    float: left;
+}
+
+#playlists li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+#playlists li a:hover {
+    background-color: #111111;
+}
+
+
+#track-list, #extra-detail {
     position: fixed;
     left: 17em;
     margin: 1.0em 0 0 1.5em;
 }
-#main-detail {
+#track-list {
     top: 36px;
     height: 98px;
 }
-#main-detail .artist, #main-detail .album, #main-detail .title {
+#track-list .artist, #track-list .album, #track-list .title {
     display: block;
 }
-#main-detail .title {
+#track-list .title {
     font-size: 1.3em;
     font-weight: bold;
 }
-#main-detail .albumtitle {
+#track-list .albumtitle {
     font-style: italic;
 }
 
