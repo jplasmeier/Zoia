@@ -123,6 +123,7 @@ Rough Plan:
 
 |Task|Time|Notes|Acceptance Criteria|
 |----|----|-----|-------------------|
+|Call Google Drive Java API from Clojure| 3 hours | ||
 |Implement auth, user sessions/profiles, etc.| 5 - 8 hours | Hopefully there's a framework or existing project to fork|Login page with user accounts (accnt mgmt can be hard coded), load some content based on user session info|
 |Retrieve JSON from Google Drive | 2 - 3 hours | Shouldn't be too bad, unless I have too many tracks for 1 request...| Send a request to `/all` and receive JSON of all Google Drive tracks.|
 |Populate database with metadata from Google Drive.| 5 - 7 hours | This might take awhile to get right and will be tricky to test. Definitely should start with a subset of my library before attempting to cache all of it. | Asynchronous process to load db, Db contains consistent/sound/correct records of each track including a Zid. | 

@@ -3,7 +3,9 @@
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.file :refer [wrap-file]]
             [compojure.core :refer [defroutes ANY routes]]
-            [clojure.java.io :refer [file]])
+            [clojure.java.io :refer [file]]
+            [zoia.google-drive :refer :all]
+            [google-apps-clj.google-drive :refer :all])
   (:gen-class))
 
 (defn -main
